@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: prediction-catalogue
+  cloud:
+    consul:
+      host: localhost
+      config:
+        fail-fast: false
+        format: yaml
+---
+spring:
+  profiles: prod
+  cloud:
+    consul:
+      host: consul-consul-server

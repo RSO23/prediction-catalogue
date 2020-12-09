@@ -20,6 +20,37 @@
 	</properties>
 
 	<dependencies>
+		<!-- RUNTIME DEPENDENCIES -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<!--        <dependency>-->
+		<!--            <groupId>com.h2database</groupId>-->
+		<!--            <artifactId>h2</artifactId>-->
+		<!--            <scope>runtime</scope>-->
+		<!--        </dependency>-->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- OPTIONAL DEPENDENCIES -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- NORMAL DEPENDENCIES -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -38,7 +69,15 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
+			<artifactId>spring-cloud-starter-kubernetes</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-kubernetes-ribbon</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -47,23 +86,6 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -76,6 +98,33 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+		<!-- OTHER DEPENDENCIES -->
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>6.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<!--        <dependency>-->
+		<!--            <groupId>org.hibernate.validator</groupId>-->
+		<!--            <artifactId>hibernate-validator</artifactId>-->
+		<!--            <version>6.1.2.Final</version>-->
+		<!--        </dependency>-->
+		<!--        <dependency>-->
+		<!--            <groupId>jakarta.validation</groupId>-->
+		<!--            <artifactId>jakarta.validation-api</artifactId>-->
+		<!--            <version>2.0.2</version>-->
+		<!--        </dependency>-->
+		<!--        <dependency>-->
+		<!--            <groupId>com.fasterxml.jackson.datatype</groupId>-->
+		<!--            <artifactId>jackson-datatype-hibernate5</artifactId>-->
+		<!--            <version>2.11.0</version>-->
+		<!--        </dependency>-->
 	</dependencies>
 
 	<dependencyManagement>
