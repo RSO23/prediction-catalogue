@@ -15,6 +15,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -30,6 +31,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ConfigurationPropertiesScan
 @EnableSwagger2
 @EnableDiscoveryClient
+@EnableAsync
 public class PredictionCatalogueApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(PredictionCatalogueApplication.class);

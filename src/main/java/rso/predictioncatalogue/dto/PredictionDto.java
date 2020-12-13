@@ -1,20 +1,13 @@
 package rso.predictioncatalogue.dto;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
 public class PredictionDto
 {
 
-    private String gameId;
-    private String prediction;
+    private Long gameId;
+    private String predictionResult;
     private double predictionCertainty;
-
-    public PredictionDto(String gameId){
-        this.gameId = gameId;
-    }
+    private long timestamp;
 }

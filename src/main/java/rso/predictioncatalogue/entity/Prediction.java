@@ -1,7 +1,5 @@
 package rso.predictioncatalogue.entity;
 
-import java.sql.Timestamp;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +21,7 @@ public class Prediction
     private Long predictionId;
 
     @Column(name = "game_id")
-    private String gameId;
+    private Long gameId;
 
     @Column(name = "prediction_result")
     private String predictionResult;
@@ -32,6 +30,6 @@ public class Prediction
     private double predictionCertainty;
 
     @Column(name = "timestamp")
-    private Timestamp timestamp;
+    private long timestamp;
 }
 
