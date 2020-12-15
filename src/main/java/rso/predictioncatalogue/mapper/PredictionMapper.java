@@ -11,6 +11,9 @@ public class PredictionMapper
         prediction.setPredictionCertainty(predictionDto.getPredictionCertainty());
         prediction.setPredictionResult(predictionDto.getPredictionResult());
         prediction.setTimestamp(predictionDto.getTimestamp());
+        prediction.setUserId(predictionDto.getUserId());
+        prediction.setTeam(predictionDto.getTeam());
+        prediction.setWinner(predictionDto.getWinner());
         return prediction;
     }
 
@@ -20,6 +23,9 @@ public class PredictionMapper
         predictionDto.setPredictionCertainty(prediction.getPredictionCertainty());
         predictionDto.setPredictionResult(prediction.getPredictionResult());
         predictionDto.setTimestamp(prediction.getTimestamp());
+        predictionDto.setUserId(prediction.getUserId());
+        predictionDto.setTeam(prediction.getTeam());
+        predictionDto.setWinner(prediction.getWinner());
         return predictionDto;
     }
 }

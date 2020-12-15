@@ -1,5 +1,7 @@
 package rso.predictioncatalogue.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -49,8 +51,13 @@ public class PredictionCatalogueController
     }
 
     @GetMapping("/predictions/{gameId}")
-    public Prediction getPredictionForGame(@PathVariable("gameId") Long gameId){
+    public Prediction getPredictionForGame(@PathVariable("gameId") Long gameId) {
         return predictionCatalogueService.getPredictionForGame(gameId);
+    }
+
+    @GetMapping("/predictions/user/{userId}")
+    public List<PredictionDto> getPredictionsForUser(@PathVariable("userId") Long userId) {
+        return predictionCatalogueService.findAllByUserId(userId);
     }
 
     @ApiPageable
@@ -65,6 +72,11 @@ public class PredictionCatalogueController
     @PostMapping("/predictions/save")
     public PredictionDto savePrediction(@RequestBody PredictionDto predictionDto) {
         return predictionCatalogueService.save(predictionDto);
+    }
+
+    @PostMapping("/predictions/gameIds")
+    public List<PredictionDto> getByGameIds(@RequestBody List<Long> gameIds) {
+        return predictionCatalogueService.findAllByGameIds(gameIds);
     }
 
 }

@@ -20,16 +20,25 @@ public class Prediction
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long predictionId;
 
+    private int team;
+
     @Column(name = "game_id")
     private Long gameId;
 
     @Column(name = "prediction_result")
-    private String predictionResult;
+    private Boolean predictionResult;
 
     @Column(name = "prediction_certainty")
     private double predictionCertainty;
 
     @Column(name = "timestamp")
     private long timestamp;
+
+    @Column(name = "user_id", nullable = false)
+    private long userId;
+
+    @Column(name = "winner")
+    private Boolean winner;
+
 }
 
